@@ -28,7 +28,6 @@ Add the following code to create a button which will start a SpankPay payment. A
     data-spankpay-key="test_quickstart_key"
     data-amount="69.69"
     data-currency="USD"
-    data-accepted-currencies="ETH,LTC,BTC"
     data-callback-url="https://pay-api.spankchain.com/quickstart/callback"
     data-on-payment="onSpankPayPayment"
     data-description="Test Invoice HTML">
@@ -49,7 +48,6 @@ spankpay.show({
     apiKey: 'test_quickstart_key',
     amount: '69.69',
     currency: 'USD',
-    acceptedCurrencies: ['ETH', 'LTC', 'BTC'],
     callbackUrl: 'https://pay-api.spankchain.com/quickstart/callback',
     description: 'Test Invoice JS API',
     onPayment: function(payment) {
@@ -96,7 +94,6 @@ In SpankPay, an `Invoice` is used to request payment from a user. Invoices can b
     data-spankpay-key="test_quickstart_key"
     data-amount="69.69"
     data-currency="USD"
-    data-accepted-currencies="ETH,LTC,BTC"
     data-callback-url="https://pay-api.spankchain.com/quickstart/callback"
     data-on-payment="onSpankPayPayment">
   Pay with SpankPay!
@@ -114,7 +111,6 @@ spankpay.show({
     apiKey: 'test_quickstart_key',
     amount: '69.69',
     currency: 'USD',
-    acceptedCurrencies: ['ETH', 'LTC', 'BTC'],
     callbackUrl: 'https://pay-api.spankchain.com/quickstart/callback',
     onPayment: function(payment) {
         console.log(`Payment ${payment.status}`, payment)

@@ -167,7 +167,6 @@ const frame = spankpay.show({
   apiKey: 'test_quickstart_key',
   amount: '69.69',
   currency: 'USD',
-  acceptedCurrencies: ['ETH', 'LTC', 'BTC'],
   metadata: {
     orderId: 'sc696969',
   },
