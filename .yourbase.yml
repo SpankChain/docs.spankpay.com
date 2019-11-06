@@ -1,0 +1,21 @@
+dependencies:
+  build:
+    - python:3.6
+
+build_targets:
+  - name: build_docs
+    container:
+      image: yourbase/yb_ubuntu:18.04
+    environment:
+      - LC_ALL=C.UTF-8
+      - LANG=C.UTF-8
+    commands:
+      - pip install gsutil
+      - pip install -r requirements.txt
+      - mkdocs build
+      - gsutil -m rsync -d -r ./site/ gs://docs.spankpay.com
+
+ci:
+  builds:
+    - name: build_docs
+      build_target: build_docs
