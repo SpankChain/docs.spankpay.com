@@ -1,4 +1,4 @@
-# SpankPay APIs
+# SpankPay API Reference
 
 ## Invoice
 
