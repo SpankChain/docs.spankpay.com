@@ -1,0 +1,13 @@
+steps:
+  - name: 'python:3.6'
+    entrypoint: 'pip'
+    args: ['install', '-r', 'requirements.txt', '-t', './env/']
+
+  - name: 'python:3.6'
+    entrypoint: './env/bin/mkdocs'
+    args: ['build']
+    env:
+      - 'PYTHONPATH=./env/'
+
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'rsync', '-d', '-r', 'site/', 'gs://docs.spankpay.com/']

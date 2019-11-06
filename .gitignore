@@ -22,3 +22,4 @@ Icon?
 node_modules/
 yarn-error.log
 .ipynb_checkpoints/
+site/
