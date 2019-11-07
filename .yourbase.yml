@@ -14,16 +14,11 @@ build_targets:
       - mkdocs build
 
   - name: deploy_docs
-    container:
-      image: yourbase/yb_ubuntu:18.04
-    environment:
-      - LC_ALL=C.UTF-8
-      - LANG=C.UTF-8
+    build_after:
+      - build_docs
     commands:
       - pip install gsutil
       - ./.yourbase-activate-gcloud-service-account
-      - pip install -r requirements.txt
-      - mkdocs build
       - gsutil -o Credentials:gs_service_key_file=/tmp/gcloud-service-account.json -m rsync -d -r ./site/ gs://docs.spankpay.com
 
 ci:
