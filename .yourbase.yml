@@ -9,7 +9,6 @@ build_targets:
     environment:
       - LC_ALL=C.UTF-8
       - LANG=C.UTF-8
-      - GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcloud-service-account.json
     commands:
       - pip install gsutil
       - ./.yourbase-activate-gcloud-service-account
