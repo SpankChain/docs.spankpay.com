@@ -11,7 +11,7 @@ build_targets:
       - LANG=C.UTF-8
       - GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcloud-service-account.json
     commands:
-      - echo "$GCLOUD_SERVICE_ACCOUNT_JSON" > "$GOOGLE_APPLICATION_CREDENTIALS"
+      - ./.yourbase-copy-gcloud-service-account
       - pip install gsutil
       - pip install -r requirements.txt
       - mkdocs build
