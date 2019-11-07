@@ -11,8 +11,10 @@ build_targets:
       - LANG=C.UTF-8
       - GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcloud-service-account.json
     commands:
-      - ./.yourbase-copy-gcloud-service-account
+      - wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-270.0.0-linux-x86_64.tar.gz -O /tmp/gcloud.tar.gz
+      - tar -C /tmp/ -zxf /tmp/gcloud.tar.gz 
       - pip install gsutil
+      - ./.yourbase-activate-gcloud-service-account
       - pip install -r requirements.txt
       - mkdocs build
       - gsutil -m rsync -d -r ./site/ gs://docs.spankpay.com
