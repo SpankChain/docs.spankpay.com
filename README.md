@@ -35,4 +35,4 @@ Follow these steps:
 
 ## Deploying Updates
 
-Updates are automatically deployed by CloudBuild on each push to `master`.
+Updates are automatically deployed by YourBase on each push to `master`.
