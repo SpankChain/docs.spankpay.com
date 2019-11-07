@@ -16,6 +16,9 @@ build_targets:
   - name: deploy_docs
     build_after:
       - build_docs
+    environment:
+      - LC_ALL=C.UTF-8
+      - LANG=C.UTF-8
     commands:
       - pip install gsutil
       - ./.yourbase-activate-gcloud-service-account
