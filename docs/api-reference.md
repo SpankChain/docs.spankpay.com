@@ -646,6 +646,7 @@ import hmac
 import time
 import json
 import hashlib
+
 if PY3:
     from urllib.parse import parse_qsl
 else:
@@ -671,7 +672,9 @@ def decode_spankpay_webhook(secret, sig, data):
             )
     """
 
-    if not data or data[:1] != "{":
+    secret = to_bytes(secret)
+    data = data and to_bytes(data)
+    if not data or data[:1] != b"{":
         return (None, None, "Empty or non-JSON webhook data: %r" %(shorten(data), ))
 
     sig_data = dict(parse_qsl(sig))
@@ -681,8 +684,8 @@ def decode_spankpay_webhook(secret, sig, data):
     except (ValueError, TypeError):
         return (None, None, "Invalid or missing timestamp: %r" %(sig, ))
 
-    to_sign = "%s.%s" %(timestamp, data)
-    actual_sig = hmac.new(to_bytes(secret), to_bytes(to_sign), hashlib.sha256).hexdigest()
+    to_sign = b"%d.%s" %(timestamp, data)
+    actual_sig = hmac.new(secret, to_sign, hashlib.sha256).hexdigest()
     if sig_data.get("s") != actual_sig:
         return (None, None, "Invalid signature. %r != %r" %(sig_data.get("s"), actual_sig))
 
@@ -697,17 +700,23 @@ def to_bytes(s):
     # Note: use "ascii" instead of "utf-8" here because, in this context, we
     # should only ever get ASCII input (ie, because JSON is ASCII, not unicode)
     # and we should fail early if unicode sneaks in.
-    return bytes(s, "ascii") if PY3 else str(s)
+    return (
+        s if isinstance(s, bytes) else
+        bytes(s, "ascii") if PY3 else
+        str(s)
+    )
 
 def shorten(s, n=16):
     if not s or len(s) < n:
         return s
-    return s[:n/2] + "..." + s[-n/2:]
+    return s[:n//2] + b"..." + s[-n//2:]
 
 def sign_spankpay_data(secret, data, timestamp=None):
-    timestamp = timestamp if timestamp is not None else int(time.time())
-    data = "%s.%s" %(timestamp, data)
-    sig = hmac.new(to_bytes(secret), to_bytes(data), hashlib.sha256).hexdigest()
+    secret = to_bytes(secret)
+    data = to_bytes(data)
+    timestamp = int(timestamp if timestamp is not None else time.time())
+    data = b"%d.%s" %(timestamp, data)
+    sig = hmac.new(secret, data, hashlib.sha256).hexdigest()
     return "t=%s&s=%s" %(timestamp, sig)
 
 if __name__ == '__main__':
