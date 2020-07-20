@@ -186,6 +186,20 @@ frame.on('close', () => {
 })
 ```
 
+The payment frame is available in both modal and full-page interstitial versions. By default, the modal version will be loaded, you can activate the full-page flow by passing the parameter `fullscreen: true` to the `spankpay.show` call:
+
+```javascript
+spankpay.show({
+  apiKey: 'test_quickstart_key',
+  fullscreen: true,
+  amount: '69.69',
+  currency: 'USD',
+  metadata: {
+    orderId: 'sc696969',
+  },
+  callbackUrl: 'https://pay-api.spankchain.com/quickstart/callback',
+})
+
 See also:
 
 * [Invoice parameters](api-reference.md#purchase)
