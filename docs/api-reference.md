@@ -186,7 +186,7 @@ frame.on('close', () => {
 })
 ```
 
-The payment frame is available in both modal and full-page interstitial versions. By default, the modal version will be loaded, you can activate the full-page flow by passing the parameter `fullscreen: true` to the `spankpay.show` call:
+The payment frame is available in both modal and full-page interstitial versions. The modal version will be loaded by default - you can activate the full-page flow by passing the parameter `fullscreen: true` to the `spankpay.show` call:
 
 ```javascript
 spankpay.show({
