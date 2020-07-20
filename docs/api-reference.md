@@ -199,6 +199,7 @@ spankpay.show({
   },
   callbackUrl: 'https://pay-api.spankchain.com/quickstart/callback',
 })
+```
 
 See also:
 
