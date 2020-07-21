@@ -210,11 +210,14 @@ spankpay.show({
 ```
 
 #### Full-screen
-<img align="right" src="/images/spankpay_fullscreen.png" />
+<object data="/docs/images/spankpay_fullscreen.png" type="image/png">
+  <img align="right" src="/images/spankpay_fullscreen.png" />
+</object>
 
 #### Modal
-<img align="right" src="/images/spankpay_modal.png" />
-
+<object data="/docs/images/spankpay_fullscreen.png" type="image/png">
+  <img align="right" src="/images/spankpay_modal.png" />
+</object>
 
 ### Payment Frame Events
 
