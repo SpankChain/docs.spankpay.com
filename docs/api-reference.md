@@ -186,6 +186,13 @@ frame.on('close', () => {
 })
 ```
 
+See also:
+
+* [Invoice parameters](api-reference.md#purchase)
+* [`payment` Event](api-reference.md#payment-event)
+* [Webhook Callbacks](api-reference.md#webhook-callbacks)
+
+
 ### Selecting a SpankPay UI Version
 The payment frame is available in both modal and full-screen versions. The modal version will be loaded by default - you can activate the full-page flow by passing the parameter `fullscreen: true` to the `spankpay.show` call:
 
@@ -207,12 +214,6 @@ spankpay.show({
 
 #### Modal
 <img align="right" src="images/spankpay_modal.png" />
-
-See also:
-
-* [Invoice parameters](api-reference.md#purchase)
-* [`payment` Event](api-reference.md#payment-event)
-* [Webhook Callbacks](api-reference.md#webhook-callbacks)
 
 ### Payment Frame Events
 
