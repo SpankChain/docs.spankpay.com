@@ -215,6 +215,7 @@ spankpay.show({
 #### Modal
 <img align="right" src="https://docs.spankpay.com/images/spankpay_modal.png" />
 
+
 ### Payment Frame Events
 
 Events can be handled by binding to the event on the `spankpay` object:
