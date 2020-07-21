@@ -203,10 +203,10 @@ spankpay.show({
 ```
 
 #### Full-screen
-<img align="right" src="docs/images/spankpay_fullscreen.png" />
+<img align="right" src="images/spankpay_fullscreen.png" />
 
 #### Modal
-<img align="right" src="docs/images/spankpay_modal.png" />
+<img align="right" src="images/spankpay_modal.png" />
 
 See also:
 
