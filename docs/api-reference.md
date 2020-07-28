@@ -192,6 +192,21 @@ See also:
 * [`payment` Event](api-reference.md#payment-event)
 * [Webhook Callbacks](api-reference.md#webhook-callbacks)
 
+### Enable Fiat Payments
+SpankPay supports fiat payments through [Wyre](https://www.sendwyre.com/). Enable fiat payments by passing the `fiatEnabled=true` option:
+
+```javascript
+spankpay.show({
+  apiKey: 'test_quickstart_key',
+  fiatEnabled: true,
+  amount: '69.69',
+  currency: 'USD',
+  metadata: {
+    orderId: 'sc696969',
+  },
+  callbackUrl: 'https://pay-api.spankchain.com/quickstart/callback',
+})
+```
 
 ### Selecting a SpankPay UI Version
 The payment frame is available in both modal and full-screen versions. The modal version will be loaded by default - you can activate the full-page flow by passing the parameter `fullscreen: true` to the `spankpay.show` call:
