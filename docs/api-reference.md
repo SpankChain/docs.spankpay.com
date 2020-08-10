@@ -913,3 +913,36 @@ app.post('/spankpay/callback', async (req, res) => {
 })
 ```
 
+## Public API Endpoints
+
+#### GET Transactions `/public/v1/transactions?start={date}&end={date}`:
+Returns a list of transactions associated with the account ID. Can optionally be filtered by start and/or end date by passing them in as query params.
+Will return a maximum of 2500 transactions per request - date-filtered requests should be used to aggregate larger amounts of data from this endpoint.
+
+Example response:
+```
+[
+  {
+    publicId: 'invoice_13',
+    currency: 'TEST-ETH',
+    outputAmount: '417.9',
+    amount: '420',
+    amountReceived: '420',
+    type: 'invoice',
+    createdOn: '2020-08-10T16:41:48.520Z',
+    status: 'succeeded',
+    description: 'Test Invoice'
+  },
+  {
+    publicId: 'invoice_8',
+    currency: 'TEST-ETH',
+    outputAmount: '4.179',
+    amount: '4.20',
+    amountReceived: '4.2',
+    type: 'invoice',
+    createdOn: '2020-08-10T16:41:48.498Z',
+    status: 'succeeded',
+    description: 'Test Invoice'
+  }`
+]
+```
