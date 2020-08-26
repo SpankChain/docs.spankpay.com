@@ -86,7 +86,7 @@ An Invoice is a request for a payment. When created with the Button API or the J
       <td style="text-align:right"><code>allowPartial</code>
       </td>
       <td style="text-align:left">
-        <p>If <code>allowPartial</code> is <code>true</code>, the <a href="./#3-implement-a-webhook-callback-url">webhook callback</a> will
+        <p>If <code>allowPartial</code> is <code>true</code>, the <a href="#webhook-callbacks">webhook callback</a> will
           be called unconditionally when the first payment is received, whether the
           payment is less than, equal to, or greater than the invoice amount.</p>
         <p></p>
@@ -150,7 +150,7 @@ function onSpankPayPayment(payment) {
 
 See also:
 
-* [Invoice parameters](api-reference.md#purchase)
+* [Invoice parameters](api-reference.md#invoice)
 * [`payment` Event](api-reference.md#payment-event)
 * [Webhook Callbacks](api-reference.md#webhook-callbacks)
 
@@ -188,7 +188,7 @@ frame.on('close', () => {
 
 See also:
 
-* [Invoice parameters](api-reference.md#purchase)
+* [Invoice parameters](api-reference.md#invoice)
 * [`payment` Event](api-reference.md#payment-event)
 * [Webhook Callbacks](api-reference.md#webhook-callbacks)
 
