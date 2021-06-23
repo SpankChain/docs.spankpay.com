@@ -59,12 +59,10 @@ spankpay.show({
 
 !!! info
     We strongly advise our merchants to allow "partial payments" on invoices by passing in the SDK option `allowPartial: true`. This means that any money paid on an invoice will be passed into your SpankPay account and a webhook will be sent - if you have multiple payment tiers, you will need to account for that in the endpoint that receives webhooks from SpankPay by checking the `amount_received` on the invoice at the time of webhook receipt.
-
 For example, if you have multiple payment tiers like the following:
 $0 - $10: 1 token per dollar
 $10 - $100: 1.1 tokens per dollar
 $100+: 1.2 tokens per dollar
-
 A user might initiate an invoice for $500 but only send $5, you would need to implement appropriate logic for handling that on your end by checking the actual
 amount of money the user sent instead of relying on the total amount invoiced.
 
