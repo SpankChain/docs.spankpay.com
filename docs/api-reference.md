@@ -193,7 +193,7 @@ See also:
 * [Webhook Callbacks](api-reference.md#webhook-callbacks)
 
 ### Enable Fiat Payments
-SpankPay supports fiat payments through [Wyre](https://www.sendwyre.com/). Enable fiat payments by passing the `fiatEnabled: true` option:
+SpankPay supports fiat payments through [Wyre](https://www.sendwyre.com/). Please reach out to our customer support team to have your site whitelisted for fiat payments (email [support@spankchain.com](url) and include your site URL in the email.) Then, enable fiat payments by passing the `fiatEnabled: true` option:
 
 ```javascript
 spankpay.show({
