@@ -23,7 +23,8 @@ Add the following line to the bottom of the page on which you will be accepting 
 Add the following code to create a button which will start a SpankPay payment. Alternatively, you can call the JavaScript API directly.
 
 
-``` html tab="HTML" 
+``` 
+html tab="HTML" 
 <button
     data-spankpay-key="test_quickstart_key"
     data-amount="69.69"
