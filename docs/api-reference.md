@@ -543,7 +543,8 @@ Additionally, you include query parameters in the callback URL \(for example, `â
 #### Validating Webhook Signatures
 
 
-``` javascript tab="Node + Express"
+```
+javascript tab="Node + Express"
 const spankpay = require('spankpay')
 
 app.post('/spankpay/callback', (req, res) => {
