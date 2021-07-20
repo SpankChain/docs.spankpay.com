@@ -42,7 +42,8 @@ function onSpankPayPayment(payment) {
 </script>
 ```
 
-``` javascript tab="Javascript API"
+``` 
+javascript tab="Javascript API"
 const { spankpay } = require('spankpay')
 
 spankpay.show({
