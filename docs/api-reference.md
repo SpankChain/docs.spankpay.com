@@ -579,7 +579,8 @@ app.post('/spankpay/callback', (req, res) => {
 })
 ```
 
-``` javascript tab="Javascript (manually)"
+``` 
+javascript tab="Javascript (manually)"
 const crypto = require('crypto')
 
 const crypto = require('crypto')
