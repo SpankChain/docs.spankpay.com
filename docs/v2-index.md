@@ -8,7 +8,7 @@ description: Get paid with crypto!
 
 The SpankPay Merchant SDK makes it easy to get paid with cryptocurrency: easy for your users, and easy for you \(the developer\).
 
-Getting started with SpankPay is a three-step process:
+Getting started with SpankPay is a four-step process:
 
 #### 1. Include the SpankPay JavaScript
 
@@ -29,7 +29,7 @@ Using either vanilla Javascript or our NPM package, create a button for starting
 #####HTML+Vanilla JS
 
 ```
-<script src="https://pay.spankchain.com/spankpay.js"></script>
+<script src="https://unpkg.com/@spankchain-dev/spankpay-sdk"></script>
 <button
     data-spankpay-key="test_quickstart_key"
     data-amount="69.69"
