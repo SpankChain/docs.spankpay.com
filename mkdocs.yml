@@ -4,11 +4,11 @@ repo_url: 'https://github.com/spankchain/docs.spankpay.com'
 site_description: 'SpankPay Developer Documentation'
 nav:
 - v1:
-    - Home v1: 'index.html'
-    - API Reference: 'api-reference/index.html'
+    - Home v1: 'index.md'
+    - API Reference: 'api-reference.md'
 - v2 (WIP):
-    - Home: 'v2-index/index.html'
-    - API Reference: 'v2-api-reference/index.html'
+    - Home: 'v2-index.md'
+    - API Reference: 'v2-api-reference.md'
 
 
 theme:
