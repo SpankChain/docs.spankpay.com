@@ -108,6 +108,22 @@ Currently valid input currencies:
 | `ETH` | Ethereum |
 | `LTC` | Litecoin |
 | `USDC` | USD Coin |
+| `USDT` | Tether |
+| `BUSD` | Binance USD |
+| `GUSD` | Gemini Dollar |
+| `PAX` | Paxos Standard |
+| `USDS` | Stably Dollar |
+| `AAVE` | Aave |
+| `COMP` | Compound |
+| `LINK` | Chainlink |
+| `WBTC` | Wrapped Bitcoin |
+| `BAT` | Basic Attention Token |
+| `CRV` | Curve |
+| `MKR` | Maker |
+| `SNX` | Synthetix |
+| `UMA` | UMA |
+| `UNI` | Uniswap |
+| `YFI` | yearn.finance |
 
 ### Output Currencies
 
@@ -128,7 +144,7 @@ A SpankPay button is the simplest way to accept SpankPay on your site.
 When the button is clicked, the user will be presented with the SpankPay payment frame, and the `data-on-payment` callback will be called once the payment is complete and your callback has accepted the payment.
 
 ```markup
-<script src="https://pay.spankchain.com/spankpay.js"></script>
+<script src="https://unpkg.com/@spankchain-dev/spankpay-sdk"></script>
 
 <script>
 function onSpankPayPayment(payment) {
@@ -172,18 +188,6 @@ const frame = spankpay.show({
   },
   callbackUrl: 'https://pay-api.spankchain.com/quickstart/callback',
 })
-
-frame.on('payment', payment => {
-  console.log(`Payment ${payment.status}`, payment)
-})
-
-frame.on('open', () => {
-  console.log('Frame was opened!')
-})
-
-frame.on('close', () => {
-  console.log('Frame was closed!')
-})
 ```
 
 See also:
@@ -192,8 +196,10 @@ See also:
 * [`payment` Event](api-reference.md#payment-event)
 * [Webhook Callbacks](api-reference.md#webhook-callbacks)
 
-### Enable Fiat Payments
-SpankPay supports fiat payments through [Wyre](https://www.sendwyre.com/). Please reach out to our customer support team to have fiat payments enabled for your site (email [support@spankchain.com](url) and include your site URL in the email.) Then, enable fiat payments by passing the `fiatEnabled: true` option:
+### Enable Fiat Payments- come back to (WIP)
+SpankPay supports fiat payments through [Wyre](https://www.sendwyre.com/). SpankPay supports debit card fiat payments through [Wyre](https://www.sendwyre.com/).  Wyre will charge the user's debit card for the amount of the invoice, plus their debit fee, then send the seller's account the invoiced amount in Ethereum. 
+
+In order to enable debit (fiat) payments, your site must meet our criteria for whitelisting. If you believe your site matches our guidelines and wish to enable the feature, please reach out to [support@spankchain.com](mailto:support@spankchain.com) with the email address registered to your SpankPay account, the domain you wish to whitelist, and your geographic location. Once you have been whitelisted, the only thing left to do is enable fiat payments by passing the `fiatEnabled: true` option in your JS method call:
 
 ```javascript
 spankpay.show({
@@ -207,45 +213,6 @@ spankpay.show({
   callbackUrl: 'https://pay-api.spankchain.com/quickstart/callback',
 })
 ```
-
-### Selecting a SpankPay UI Version
-The payment frame is available in both modal and full-screen versions. The modal version will be loaded by default - you can activate the full-page flow by passing the parameter `fullscreen: true` to the `spankpay.show` call:
-
-```javascript
-spankpay.show({
-  apiKey: 'test_quickstart_key',
-  fullscreen: true,
-  amount: '69.69',
-  currency: 'USD',
-  metadata: {
-    orderId: 'sc696969',
-  },
-  callbackUrl: 'https://pay-api.spankchain.com/quickstart/callback',
-})
-```
-
-#### Full-screen
-<img align="right" src="https://docs.spankpay.com/images/spankpay_fullscreen.png" />
-
-#### Modal
-<img align="right" src="https://docs.spankpay.com/images/spankpay_modal.png" />
-
-
-### Payment Frame Events
-
-Events can be handled by binding to the event on the `spankpay` object:
-
-```javascript
-spankpay.on('open', () => { ... })
-spankpay.on('close', () => { ... })
-spankpay.on('payment', payment => { ... })
-```
-
-| Event | Description |
-| ---: | :--- |
-| `open` | Triggered when the frame is opened. |
-| `close` | Triggered when the frame is closed. |
-| `payment` | Triggered when a payment is received, after the `callback` URL has accepted the payment. See: [`payment` Event](api-reference.md#payment-event). |
 
 ### `payment` Event
 
@@ -287,15 +254,14 @@ A payment is created when SpankPay receives a user's payment in response to an [
       <td style="text-align:right"><code>status</code>
       </td>
       <td style="text-align:left">
-        <p>One of <code>&quot;pending&quot;</code>, <code>&quot;failed&quot;</code>, <code>&quot;rejected&quot;</code>,
-          or <code>&quot;succeeded&quot;</code>.</p>
+        <p>One of <code>&quot;pending&quot;</code>, <code>&quot;failed&quot;</code>,
+          or <code>&quot;complete&quot;</code>.</p>
         <p><code>&quot;pending&quot;</code> if the payment is still being verified
           (either waiting for an onchain transaction, or waiting for result of the
           callback).</p>
         <p><code>&quot;failed&quot;</code> if the webhook failed, or if the user navigates
           away from the payment page before completing the payment.</p>
-        <p><code>&quot;rejected&quot;</code> if the webhook rejected the payment.</p>
-        <p> <code>&quot;succeeded&quot;</code> if the payment has been confirmed onchain
+        <p> <code>&quot;complete&quot;</code> if the payment has been confirmed onchain
           and the callback has returned success.</p>
       </td>
     </tr>
@@ -475,30 +441,22 @@ X-SpankPay-Signature: t=1551389518&s=b613679a0814d9ec…
 }
 ```
 
-The `type` field will always be `"payment"`, although there may be other types in the future. The rest of the body will be a [Payment object](api-reference.md#payment).
-
 Note: the `Content-Type` will be `text/plain` instead of `application/json` as might be expected. This is to ensure that web frameworks like Express do not attempt to parse the request body as JSON, and instead make the raw string available to the request handler so it can more easy check the signature.
 
 ### Expected Response
 
 The webhook endpoint must return an HTTP 200 response with a JSON object containing `{ "received": true }`. Other metadata may optionally be included in the JSON object, and it will be returned verbatim in the Payment's `receipt.response` field.
 
-A payment will be considered rejected if the response contains either `{ "received": false }`, or an HTTP status code of `4XX`. On a rejected payment, the user will be refunded their cryptocurrency \(less standard transaction fees\) and the payment will be marked `"rejected"`.
-
 If the webhook endpoint returns a non-200 response, or a body that does not contain `{ "received": true }`, the webhook will be retried according to the following rules:
 
 * 10 times, each 30 seconds apart \(ie, every 30 seconds for 5 minutes\)
 * 10 times, each 5 minutes apart \(ie, every 5 minutes for 50 minutes\)
 
-If all retries fail, the API key administrator will be notified. A webhook can be manually retried at any point through the administrative UI.
-
 ### Testing Webhooks
 
-The Webhook Test Page \(not yet available\) can be used to send simulated webhooks.
+The Webhook Test Page can be used to send simulated webhooks.
 
-\(this will be a page with inputs for URL, public key, secret key, various payment fields, and a button which - when clicked - will trigger a webhook call to the provided URL\).
-
-Note: the webhook test page can only be used with testing keys \(ie, keys prefixed with "test\_"\), and all currencies will be "TEST-" currencies.
+At the moment, the test webhooks will send the body of a started invoice
 
 Additionally, we recommend that developers use [ngrok](https://ngrok.com/) to create a public URL which can route to their local development server. During development, your application can be configured to automatically query ngrok for the developer's current public URL:
 
@@ -542,42 +500,6 @@ Additionally, you include query parameters in the callback URL \(for example, `�
 
 #### Validating Webhook Signatures
 
-
-```
-javascript tab="Node + Express"
-const spankpay = require('spankpay')
-
-app.post('/spankpay/callback', (req, res) => {
-    const key = req.headers['x-spankpay-key']
-    if (key != process.env.SPANKPAY_API_KEY) {
-        console.error(
-            `Unexpected SpankPay API key: ` +
-            `${key} != ${process.env.SPANKPAY_API_KEY}`
-        )
-        return res.status(400)
-    }
-
-    const [data, timestamp, err] = spankpay.decodeWebhook(
-        process.env.SPANKPAY_API_SECRET,
-        req.headers['x-spankpay-signature'],
-        req.body,
-    )
-    if (err) {
-        console.error('Error decoding SpankPay webhook:', err)
-        return res.status(400)
-    }
-
-    const age = (Date.now() / 1000) - timestamp
-    if (age > 60 * 10) {
-        console.error(`SpankPay webhook too old (was created ${age}s ago)`)
-        return res.status(400)
-    }
-
-    // ... handle webhook ...
-
-    return res.json({ received: true })
-})
-```
 
 ``` 
 javascript tab="Javascript (manually)"
@@ -913,39 +835,4 @@ app.post('/spankpay/callback', async (req, res) => {
 
     return res.json({ received: true })
 })
-```
-
-## Public API Endpoints
-
-#### GET Transactions:
-`/public/v1/transactions?start={date}&end={date}`
-Returns a list of transactions associated with the account ID. Can optionally be filtered by start and/or end date by passing them in as query params.
-Will return a maximum of 2500 transactions per request - date-filtered requests should be used to aggregate larger amounts of data from this endpoint.
-
-Example response:
-```
-[
-  {
-    publicId: 'invoice_13',
-    currency: 'TEST-ETH',
-    outputAmount: '417.9',
-    amount: '420',
-    amountReceived: '420',
-    type: 'invoice',
-    createdOn: '2020-08-10T16:41:48.520Z',
-    status: 'succeeded',
-    description: 'Test Invoice'
-  },
-  {
-    publicId: 'invoice_8',
-    currency: 'TEST-ETH',
-    outputAmount: '4.179',
-    amount: '4.20',
-    amountReceived: '4.2',
-    type: 'invoice',
-    createdOn: '2020-08-10T16:41:48.498Z',
-    status: 'succeeded',
-    description: 'Test Invoice'
-  }`
-]
 ```
