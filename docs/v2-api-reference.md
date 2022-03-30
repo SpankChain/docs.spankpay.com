@@ -197,7 +197,9 @@ See also:
 * [Webhook Callbacks](api-reference.md#webhook-callbacks)
 
 ### Enable Fiat Payments- come back to (WIP)
-SpankPay supports fiat payments through [Wyre](https://www.sendwyre.com/). Please reach out to our customer support team to have fiat payments enabled for your site (email [support@spankchain.com](url) and include your site URL in the email.) Then, enable fiat payments by passing the `fiatEnabled: true` option:
+SpankPay supports fiat payments through [Wyre](https://www.sendwyre.com/). SpankPay supports debit card fiat payments through [Wyre](https://www.sendwyre.com/).  Wyre will charge the user's debit card for the amount of the invoice, plus their debit fee, then send the seller's account the invoiced amount in Ethereum. 
+
+In order to enable debit (fiat) payments, your site must meet our criteria for whitelisting. If you believe your site matches our guidelines and wish to enable the feature, please reach out to [support@spankchain.com](mailto:support@spankchain.com) with the email address registered to your SpankPay account, the domain you wish to whitelist, and your geographic location. Once you have been whitelisted, the only thing left to do is enable fiat payments by passing the `fiatEnabled: true` option in your JS method call:
 
 ```javascript
 spankpay.show({

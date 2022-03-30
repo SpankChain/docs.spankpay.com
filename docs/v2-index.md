@@ -138,6 +138,8 @@ In SpankPay, an `Invoice` is used to request payment from a user. Invoices can b
     data-on-payment="onSpankPayPayment">
   Pay with SpankPay!
 </button>
+
+<script src="https://unpkg.com/@spankchain-dev/spankpay-sdk"></script>
 ```
 
 Or via the [`spankpay.show(...)` method](api-reference.md#creating-an-invoice-with-the-spankpay-javascript-api):
