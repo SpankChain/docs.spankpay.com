@@ -16,8 +16,8 @@ theme:
   palette:
         primary: 'pink'
         accent: 'purple'
-  logo: 'images/white-S-logo.png'
   favicon: 'images/favicon.ico'
+  logo: 'images/white-S-logo.png'
 
 markdown_extensions:
   - admonition
@@ -25,14 +25,13 @@ markdown_extensions:
       linenums: true
   - pymdownx.superfences
 
-extra:
-  social:
-    - type: 'github'
-      link: 'https://github.com/spankchain'
-    - type: 'medium'
-      link: 'https://www.medium.com/spankchain'
-    - type: 'reddit'
-      link: 'https://www.reddit.com/r/SpankChain/'
-    - type: 'twitter'
-      link: 'https://twitter.com/SpankChain'
-    
+# extra:
+#   social:
+#     - icon: 
+#       link: 'https://github.com/spankchain'
+#     - icon: 
+#       link: 'https://www.medium.com/spankchain'
+#     - icon: 
+#       link: 'https://www.reddit.com/r/SpankChain/'
+#     - icon: 
+#       link: 'https://twitter.com/SpankChain'
