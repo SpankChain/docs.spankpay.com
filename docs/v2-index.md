@@ -2,7 +2,7 @@
 description: Get paid with crypto!
 ---
 
-# Welcome to the SpankPay Developer Documentation!
+# Welcome to the SpankPay (v2) Developer Documentation!
 
 ## Overview
 
@@ -81,7 +81,7 @@ import spankpay from "@spankchain-dev/spankpay-sdk";
 Render
 
 ```
-  <button onClick={() => showSpankPay(true, true)}>
+  <button onClick={() => showSpankPay(false, false)}>
         Button using the JS show method
     </button>
 ```
@@ -230,18 +230,6 @@ Turn on Test Currencies via the toggle in your account's Developer section. Now 
 We recommend using the testing key in your development and staging environments.
 
 At this moment, test payments in the SDK will not create a payment object, and therefore won’t trigger a webhook to your callback URL. Feature update coming soon.
-
-```json
-{
-    "amount": "69.69",
-    "amountCurrency": "TEST-USD",
-    "inputAmount": "0.6969",
-    "inputCurrency": "TEST-ETH",
-    ...
-}
-```
-
-Note that the testing API key also uses a different secret key.
 
 We recommend using the testing key in your development and staging environments.
 
