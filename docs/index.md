@@ -4,7 +4,7 @@ description: Get paid with crypto!
 
 # Welcome to the SpankPay Developer Documentation!
 
-## Overview
+## Overview (v1)
 
 The SpankPay Merchant SDK makes it easy to get paid with cryptocurrency: easy for your users, and easy for you \(the developer\).
 
