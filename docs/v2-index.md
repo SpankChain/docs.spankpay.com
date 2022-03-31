@@ -29,7 +29,6 @@ Using either vanilla Javascript or our NPM package, create a button for starting
 #####HTML+Vanilla JS
 
 ```
-<script src="https://unpkg.com/@spankchain-dev/spankpay-sdk"></script>
 <button
     data-spankpay-key="test_quickstart_key"
     data-amount="69.69"
@@ -40,6 +39,7 @@ Using either vanilla Javascript or our NPM package, create a button for starting
   Pay with SpankPay!
 </button>
 
+<script src="https://unpkg.com/@spankchain-dev/spankpay-sdk"></script>
 <script>
 function onSpankPayPayment(payment) {
     console.log(`Payment ${payment.status}:`, payment)
