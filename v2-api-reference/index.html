@@ -1,0 +1,1599 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SpankPay Developer Documentation">
+      
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>API Reference - SpankPay Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#e92063">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="pink" data-md-color-accent="purple">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spankpay-v2-api-reference-wip" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SpankPay Developer Documentation" class="md-header__button md-logo" aria-label="SpankPay Developer Documentation" data-md-component="logo">
+      
+  <img src="../images/white-S-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SpankPay Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/spankchain/docs.spankpay.com" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    spankchain/docs.spankpay.com
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SpankPay Developer Documentation" class="md-nav__button md-logo" aria-label="SpankPay Developer Documentation" data-md-component="logo">
+      
+  <img src="../images/white-S-logo.png" alt="logo">
+
+    </a>
+    SpankPay Developer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/spankchain/docs.spankpay.com" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    spankchain/docs.spankpay.com
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          v1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="v1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          v1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home v1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        API Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          v2 (WIP)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="v2 (WIP)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          v2 (WIP)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v2-index/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        API Reference
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#invoice" class="md-nav__link">
+    Invoice
+  </a>
+  
+    <nav class="md-nav" aria-label="Invoice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-currency" class="md-nav__link">
+    Input Currency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-currencies" class="md-nav__link">
+    Output Currencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-invoice-with-a-button" class="md-nav__link">
+    Creating an Invoice with a Button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-invoice-with-the-spankpay-javascript-api" class="md-nav__link">
+    Creating an Invoice with the SpankPay JavaScript API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-fiat-payments-come-back-to-wip" class="md-nav__link">
+    Enable Fiat Payments- come back to (WIP)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment-event" class="md-nav__link">
+    payment Event
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payment" class="md-nav__link">
+    Payment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-callbacks" class="md-nav__link">
+    Webhook Callbacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhook Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webhook-format" class="md-nav__link">
+    Webhook Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-response" class="md-nav__link">
+    Expected Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-webhooks" class="md-nav__link">
+    Testing Webhooks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validating-webhook-signatures" class="md-nav__link">
+    Validating Webhook Signatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventing-replay-attacks" class="md-nav__link">
+    Preventing Replay Attacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#invoice" class="md-nav__link">
+    Invoice
+  </a>
+  
+    <nav class="md-nav" aria-label="Invoice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-currency" class="md-nav__link">
+    Input Currency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-currencies" class="md-nav__link">
+    Output Currencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-invoice-with-a-button" class="md-nav__link">
+    Creating an Invoice with a Button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-invoice-with-the-spankpay-javascript-api" class="md-nav__link">
+    Creating an Invoice with the SpankPay JavaScript API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-fiat-payments-come-back-to-wip" class="md-nav__link">
+    Enable Fiat Payments- come back to (WIP)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment-event" class="md-nav__link">
+    payment Event
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payment" class="md-nav__link">
+    Payment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-callbacks" class="md-nav__link">
+    Webhook Callbacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhook Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webhook-format" class="md-nav__link">
+    Webhook Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-response" class="md-nav__link">
+    Expected Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-webhooks" class="md-nav__link">
+    Testing Webhooks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validating-webhook-signatures" class="md-nav__link">
+    Validating Webhook Signatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventing-replay-attacks" class="md-nav__link">
+    Preventing Replay Attacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/spankchain/docs.spankpay.com/edit/master/docs/v2-api-reference.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="spankpay-v2-api-reference-wip">SpankPay v2 API Reference- WIP</h1>
+<h2 id="invoice">Invoice</h2>
+<p>An Invoice is a request for a payment. When created with the Button API or the JavaScript API, the user will be presented with a payment form prompting them to send cryptocurrency equivalent in value to the requested amount. Once the cryptocurrency has been received, the <code>callback</code> webhook will be called, and the Button/JavaScript <code>onPaymentComplete</code> callback is called.</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:right;min-width: 9rem;">Attribute</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:right"><code>id</code>
+      </td>
+      <td style="text-align:left">The invoice&apos;s ID (assigned by SpankPay).</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>createdOn</code>
+      </td>
+      <td style="text-align:left">The timestamp the invoice was created (ISO 8601 format, assigned by SpankPay).</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>status</code>
+      </td>
+      <td style="text-align:left">The invoice&apos;s status. One of <code>pending</code> (awaiting payment), <code>pending-callback</code> (payment
+        received, waiting for webhook to complete), <code>failed</code>, or <code>succeeded</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>apiKey</code>
+      </td>
+      <td style="text-align:left">The API key used to create this invoice.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>amount</code>
+      </td>
+      <td style="text-align:left">The amount of the invoice, in <code>currency</code>. Must be positive and
+        rounded to the appropriate number of decimal places for the currency.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>currency</code>
+      </td>
+      <td style="text-align:left">The currency being requested. For valid values, see <a href="#output-currencies">Output Currencies</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>description</code>
+      </td>
+      <td style="text-align:left">
+        A description of the goods / services within the invoice.
+        <p></p>
+        <p>Optional (but recommended).</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>acceptedCurrencies</code>
+      </td>
+      <td style="text-align:left">
+        <p>A list of currencies which should be accepted for this invoice. For valid
+          values, see <a href="#input-currency">Input Currencies</a>.</p>
+        <p></p>
+        <p>Must be a subset of the API Key&apos;s list of accepted currencies.</p>
+        <p></p>
+        <p>Optional (default: all available currencies)</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>callbackUrl</code>
+      </td>
+      <td style="text-align:left">The callback URL used to notify your application when the payment succeeds.
+        See also: <a href="#webhook-callbacks">Webhook Callbacks</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>metadata</code>
+      </td>
+      <td style="text-align:left">Arbitrary metadata provided by the caller, stored and returned along with
+        the invoice. We suggest including the order or invoice number, and an opaque
+        customer ID.
+        <br />
+        <br />Limited to 128kb of JSON data.
+        <br />
+        <br />Optional (default: <code>{}</code>)</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>allowPartial</code>
+      </td>
+      <td style="text-align:left">
+        <p>If <code>allowPartial</code> is <code>true</code>, the <a href="./#3-implement-a-webhook-callback-url">webhook callback</a> will
+          be called unconditionally when the first payment is received, whether the
+          payment is less than, equal to, or greater than the invoice amount.</p>
+        <p></p>
+        <p>Optional (default: <code>false</code>)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="input-currency">Input Currency</h3>
+<p>The Input Currency for an Invoice is the currency sent by the user.</p>
+<p>Currently valid input currencies:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Currency</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><code>BTC</code></td>
+<td align="left">Bitcoin</td>
+</tr>
+<tr>
+<td align="right"><code>ETH</code></td>
+<td align="left">Ethereum</td>
+</tr>
+<tr>
+<td align="right"><code>LTC</code></td>
+<td align="left">Litecoin</td>
+</tr>
+<tr>
+<td align="right"><code>USDC</code></td>
+<td align="left">USD Coin</td>
+</tr>
+<tr>
+<td align="right"><code>USDT</code></td>
+<td align="left">Tether</td>
+</tr>
+<tr>
+<td align="right"><code>BUSD</code></td>
+<td align="left">Binance USD</td>
+</tr>
+<tr>
+<td align="right"><code>GUSD</code></td>
+<td align="left">Gemini Dollar</td>
+</tr>
+<tr>
+<td align="right"><code>PAX</code></td>
+<td align="left">Paxos Standard</td>
+</tr>
+<tr>
+<td align="right"><code>USDS</code></td>
+<td align="left">Stably Dollar</td>
+</tr>
+<tr>
+<td align="right"><code>AAVE</code></td>
+<td align="left">Aave</td>
+</tr>
+<tr>
+<td align="right"><code>COMP</code></td>
+<td align="left">Compound</td>
+</tr>
+<tr>
+<td align="right"><code>LINK</code></td>
+<td align="left">Chainlink</td>
+</tr>
+<tr>
+<td align="right"><code>WBTC</code></td>
+<td align="left">Wrapped Bitcoin</td>
+</tr>
+<tr>
+<td align="right"><code>BAT</code></td>
+<td align="left">Basic Attention Token</td>
+</tr>
+<tr>
+<td align="right"><code>CRV</code></td>
+<td align="left">Curve</td>
+</tr>
+<tr>
+<td align="right"><code>MKR</code></td>
+<td align="left">Maker</td>
+</tr>
+<tr>
+<td align="right"><code>SNX</code></td>
+<td align="left">Synthetix</td>
+</tr>
+<tr>
+<td align="right"><code>UMA</code></td>
+<td align="left">UMA</td>
+</tr>
+<tr>
+<td align="right"><code>UNI</code></td>
+<td align="left">Uniswap</td>
+</tr>
+<tr>
+<td align="right"><code>YFI</code></td>
+<td align="left">yearn.finance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-currencies">Output Currencies</h3>
+<p>The Output Currency for an Invoice is the currency which will be displayed to the user. For example, a US$10 invoice will have <code>"amount": "10.00"</code> and <code>"currency": "USD"</code>, and when paying, the user will be given the option to pay with (for example) 0.074 ETH or 0.0026 BTC.</p>
+<p>Currently valid output currencies:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Currency</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><code>USD</code></td>
+<td align="left">US Dollars</td>
+</tr>
+<tr>
+<td align="right"><code>BTC</code></td>
+<td align="left">Bitcoin</td>
+</tr>
+<tr>
+<td align="right"><code>ETH</code></td>
+<td align="left">Ethereum</td>
+</tr>
+</tbody>
+</table>
+<h3 id="creating-an-invoice-with-a-button">Creating an Invoice with a Button</h3>
+<p>A SpankPay button is the simplest way to accept SpankPay on your site.</p>
+<p>When the button is clicked, the user will be presented with the SpankPay payment frame, and the <code>data-on-payment</code> callback will be called once the payment is complete and your callback has accepted the payment.</p>
+<div class="highlight"><pre><span></span><code>&lt;script src=&quot;https://unpkg.com/@spankchain-dev/spankpay-sdk&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+function onSpankPayPayment(payment) {
+  console.log(`Payment ${payment.status}`, payment)
+}
+&lt;/script&gt;
+
+&lt;button
+    data-spankpay-key=&quot;test_quickstart_key&quot;
+    data-amount=&quot;69.69&quot;
+    data-currency=&quot;USD&quot;
+    data-accepted-currencies=&quot;ETH,LTC,BTC&quot;
+    data-metadata=&quot;{&amp;quot;orderId&amp;quot;: &amp;quot;sc696969&amp;quot;}&quot;
+    data-callback-url=&quot;https://pay-api.spankchain.com/quickstart/callback&quot;
+    data-on-payment=&quot;onSpankPayPayment&quot;&gt;
+  Pay with SpankPay!
+&lt;/button&gt;
+</code></pre></div>
+<p>See also:</p>
+<ul>
+<li><a href="../api-reference/#purchase">Invoice parameters</a></li>
+<li><a href="../api-reference/#payment-event"><code>payment</code> Event</a></li>
+<li><a href="../api-reference/#webhook-callbacks">Webhook Callbacks</a></li>
+</ul>
+<h3 id="creating-an-invoice-with-the-spankpay-javascript-api">Creating an Invoice with the SpankPay JavaScript API</h3>
+<p>For complete control over the user's SpankPay experience, the API can be called directly.</p>
+<p>The <code>spankpay.show(...)</code> method can be used to show the SpankPay payment frame.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">spankpay</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;spankpay&#39;</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">frame</span> <span class="o">=</span> <span class="nx">spankpay</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
+  <span class="nx">apiKey</span><span class="o">:</span> <span class="s1">&#39;test_quickstart_key&#39;</span><span class="p">,</span>
+  <span class="nx">amount</span><span class="o">:</span> <span class="s1">&#39;69.69&#39;</span><span class="p">,</span>
+  <span class="nx">currency</span><span class="o">:</span> <span class="s1">&#39;USD&#39;</span><span class="p">,</span>
+  <span class="nx">metadata</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">orderId</span><span class="o">:</span> <span class="s1">&#39;sc696969&#39;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">callbackUrl</span><span class="o">:</span> <span class="s1">&#39;https://pay-api.spankchain.com/quickstart/callback&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>See also:</p>
+<ul>
+<li><a href="../api-reference/#purchase">Invoice parameters</a></li>
+<li><a href="../api-reference/#payment-event"><code>payment</code> Event</a></li>
+<li><a href="../api-reference/#webhook-callbacks">Webhook Callbacks</a></li>
+</ul>
+<h3 id="enable-fiat-payments-come-back-to-wip">Enable Fiat Payments- come back to (WIP)</h3>
+<p>SpankPay supports fiat payments through <a href="https://www.sendwyre.com/">Wyre</a>. SpankPay supports debit card fiat payments through <a href="https://www.sendwyre.com/">Wyre</a>.  Wyre will charge the user's debit card for the amount of the invoice, plus their debit fee, then send the seller's account the invoiced amount in Ethereum. </p>
+<p>In order to enable debit (fiat) payments, your site must meet our criteria for whitelisting. If you believe your site matches our guidelines and wish to enable the feature, please reach out to <a href="mailto:support@spankchain.com">support@spankchain.com</a> with the email address registered to your SpankPay account, the domain you wish to whitelist, and your geographic location. Once you have been whitelisted, the only thing left to do is enable fiat payments by passing the <code>fiatEnabled: true</code> option in your JS method call:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">spankpay</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
+  <span class="nx">apiKey</span><span class="o">:</span> <span class="s1">&#39;test_quickstart_key&#39;</span><span class="p">,</span>
+  <span class="nx">fiatEnabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">amount</span><span class="o">:</span> <span class="s1">&#39;69.69&#39;</span><span class="p">,</span>
+  <span class="nx">currency</span><span class="o">:</span> <span class="s1">&#39;USD&#39;</span><span class="p">,</span>
+  <span class="nx">metadata</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">orderId</span><span class="o">:</span> <span class="s1">&#39;sc696969&#39;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">callbackUrl</span><span class="o">:</span> <span class="s1">&#39;https://pay-api.spankchain.com/quickstart/callback&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="payment-event"><code>payment</code> Event</h3>
+<p>The <code>payment</code> event will be triggered when a payment has been received and the <code>callback</code> url has accepted or rejected the payment.</p>
+<p>The <code>payment</code>  argument will be a <a href="../api-reference/#payment">Payment object</a>, and the <code>status</code> should be checked to ensure the payment has succeeded. Note, however, that the payment will only fail if the <code>callback</code> rejects the payment (see: <a href="../api-reference/#expected-response">Webhook Expected Response</a>).</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">onPayment</span><span class="p">(</span><span class="nx">payment</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Payment </span><span class="si">${</span><span class="nx">payment</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">:`</span><span class="p">,</span> <span class="nx">payment</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">payment</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="s2">&quot;succeeded&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s1">&#39;/order-complete&#39;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s1">&#39;/order-failed&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="payment">Payment</h2>
+<p>A payment is created when SpankPay receives a user's payment in response to an <a href="../api-reference/#invoice">Invoice</a>.</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:right; min-width:10rem;">Attribute</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:right"><code>createdOn</code>
+      </td>
+      <td style="text-align:left">The timestamp when the payment was first received. ISO 8601 format.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>status</code>
+      </td>
+      <td style="text-align:left">
+        <p>One of <code>&quot;pending&quot;</code>, <code>&quot;failed&quot;</code>,
+          or <code>&quot;complete&quot;</code>.</p>
+        <p><code>&quot;pending&quot;</code> if the payment is still being verified
+          (either waiting for an onchain transaction, or waiting for result of the
+          callback).</p>
+        <p><code>&quot;failed&quot;</code> if the webhook failed, or if the user navigates
+          away from the payment page before completing the payment.</p>
+        <p> <code>&quot;complete&quot;</code> if the payment has been confirmed onchain
+          and the callback has returned success.</p>
+      </td>
+    </tr>
+    <tr>    We _strongly_ recommend validating webhook signatures, otherwise it could be possible for an attacker to create fake payment confirmations.
+      <td style="text-align:right"><code>invoiceId</code>
+      </td>
+      <td style="text-align:left">The ID of the corresponding Invoice.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>invoice</code>
+      </td>
+      <td style="text-align:left">The corresponding Invoice object (<a href="#invoice">see above</a>).</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>currency</code>
+      </td>
+      <td style="text-align:left">The invoice&apos;s currency.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>amount</code>
+      </td>
+      <td style="text-align:left">The invoiced amount.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>exchangeRate</code>
+      </td>
+      <td style="text-align:left">
+        <p>The exchange rate used for this payment.</p>
+        <p>
+          <br /><code>amount = inputAmount &#x2A09; exchangeRate</code>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>inputCurrency</code>
+      </td>
+      <td style="text-align:left">The input currency selected by the user (ex, &quot;ETH&quot;).</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>inputAmount</code>
+      </td>
+      <td style="text-align:left">The amount of the input currency that was paid, in <code>inputCurrency</code> (ex,
+        &quot;0.6969&quot;).</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>outputCurrency</code>
+      </td>
+      <td style="text-align:left">The currency which will be credited to the merchant&apos;s account (currently
+        the <code>inputCurrency</code>, but in the future this will be configurable)</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>outputAmount</code>
+      </td>
+      <td style="text-align:left">
+        <p>The amount that will be credited to the merchant&apos;s account, in <code>outputCurrency</code>.</p>
+        <p></p>
+        <p><code>outputAmount = inputAmount - feeAmount</code> (adjusting for their
+          respective currencies)</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>outputAmountTarget</code>
+      </td>
+      <td style="text-align:left">The amount (in <code>currency</code>) that will be credit to the merchant&apos;s
+        account.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>feeAmountTarget</code>
+      </td>
+      <td style="text-align:left">
+        <p>The fee taken by SpankPay, converted to <code>currency</code>.</p>
+        <p>
+          <br />Note: SpankPay&apos;s fee is only taken once. It is converted to multiple
+          currencies for convenience.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>feeAmountInput</code>
+      </td>
+      <td style="text-align:left">The fee taken by SpankPay, converted to <code>inputCurrency</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>feeAmountOutput</code>
+      </td>
+      <td style="text-align:left">The fee taken by SpankPay, converted to <code>outputCurrency</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>receipt</code>
+      </td>
+      <td style="text-align:left">The result of the <a href="#webhook-callbacks">webhook callback</a> (or <code>null</code> when
+        the webhook is being called).</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>receipt.type</code>
+      </td>
+      <td style="text-align:left">Always <code>&quot;webhook&quot;</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>receipt.url</code>
+      </td>
+      <td style="text-align:left">The URL which was called</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>receipt.status</code>
+      </td>
+      <td style="text-align:left">One of <code>&quot;pending&quot;</code>, <code>&quot;failed&quot;</code>,
+        or <code>&quot;succeeded&quot;</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>receipt.calledOn</code>
+      </td>
+      <td style="text-align:left">The timestamp of the last call (ISO 8601 format).</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>receipt.responseStatus</code>
+      </td>
+      <td style="text-align:left">
+        <p>The HTTP status code of the last request.</p>
+        <p>
+          <br />The request will be considered successful if the status code is <code>2XX</code>,
+          permanently failed if it is <code>4XX</code>, and otherwise the callback
+          will be retried.</p>
+        <p>
+          <br />A <code>responseStatus</code> of <code>999</code> indicates a network or other
+          non-HTTP error.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>receipt.responseHeaders</code>
+      </td>
+      <td style="text-align:left">The HTTP headers returned by the last request.</td>
+    </tr>
+    <tr>
+      <td style="text-align:right"><code>receipt.responseBody</code>
+      </td>
+      <td style="text-align:left">
+        <p>The content of the HTTP response.</p>
+        <p>
+          <br />A JSON object if the response has <code>Content-Type: application/json</code> ,
+          and a string otherwise.</p>
+        <p>
+          <br />Truncated to 128kb.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="webhook-callbacks">Webhook Callbacks</h2>
+<p>SpankPay will POST a message to your application server when it receives a payment, and the payment will be considered successful once it receives a response containing <code>{"received": true}</code>.</p>
+<p>The <code>callback</code> URL is provided when the <a href="../api-reference/#invoice">Invoice</a> is created, and we recommend including some metadata in the URL which your application can use to credit the appropriate order.</p>
+<p>For example, if you assign each order an ID, the <code>callback</code> URL might be <code>https://your-site.com/api/spankpay/callback?order-id=sc696969</code>.</p>
+<h3 id="webhook-format">Webhook Format</h3>
+<p>Webhook messages will take the following format:</p>
+<div class="highlight"><pre><span></span><code><span class="err">POST</span><span class="w"> </span><span class="err">/quicks</span><span class="kc">tart</span><span class="err">/callback</span><span class="w"></span>
+<span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">/plai</span><span class="kc">n</span><span class="w"></span>
+<span class="err">X</span><span class="mi">-</span><span class="err">Spa</span><span class="kc">n</span><span class="err">kPay</span><span class="mi">-</span><span class="err">Key</span><span class="p">:</span><span class="w"> </span><span class="kc">test</span><span class="err">_quicks</span><span class="kc">tart</span><span class="err">_key</span><span class="w"></span>
+<span class="err">X</span><span class="mi">-</span><span class="err">Spa</span><span class="kc">n</span><span class="err">kPay</span><span class="mi">-</span><span class="err">Sig</span><span class="kc">nature</span><span class="p">:</span><span class="w"> </span><span class="kc">t</span><span class="err">=</span><span class="mi">1551389518</span><span class="err">&amp;s=b</span><span class="mi">613679</span><span class="err">a</span><span class="mi">0814</span><span class="err">d</span><span class="mf">9e</span><span class="err">c…</span><span class="w"></span>
+
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;payment&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;payment_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pay_c493715653c&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;createdOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1969-06-09T06:09:06.969Z&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;invoiceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;inv_f95d778c35f&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;invoice&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;69.69&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;amountCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;inputAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.6969&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;inputCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ETH&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;inputTx&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x2144292c5ad…&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="err">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Note: the <code>Content-Type</code> will be <code>text/plain</code> instead of <code>application/json</code> as might be expected. This is to ensure that web frameworks like Express do not attempt to parse the request body as JSON, and instead make the raw string available to the request handler so it can more easy check the signature.</p>
+<h3 id="expected-response">Expected Response</h3>
+<p>The webhook endpoint must return an HTTP 200 response with a JSON object containing <code>{ "received": true }</code>. Other metadata may optionally be included in the JSON object, and it will be returned verbatim in the Payment's <code>receipt.response</code> field.</p>
+<p>If the webhook endpoint returns a non-200 response, or a body that does not contain <code>{ "received": true }</code>, the webhook will be retried according to the following rules:</p>
+<ul>
+<li>10 times, each 30 seconds apart (ie, every 30 seconds for 5 minutes)</li>
+<li>10 times, each 5 minutes apart (ie, every 5 minutes for 50 minutes)</li>
+</ul>
+<h3 id="testing-webhooks">Testing Webhooks</h3>
+<p>The Webhook Test Page can be used to send simulated webhooks.</p>
+<p>At the moment, the test webhooks will send the body of a started invoice</p>
+<p>Additionally, we recommend that developers use <a href="https://ngrok.com/">ngrok</a> to create a public URL which can route to their local development server. During development, your application can be configured to automatically query ngrok for the developer's current public URL:</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getPublicUrl</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">PUBLIC_URL</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">config</span><span class="p">.</span><span class="nx">PUBLIC_URL</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">config</span><span class="p">.</span><span class="nx">ENVIRONMENT</span> <span class="o">!=</span> <span class="s1">&#39;development&#39;</span><span class="p">)</span>
+    <span class="k">throw</span> <span class="ow">new</span> <span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;config.PUBLIC_URL has not been defined!&#39;</span><span class="p">)</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;http://localhost:4040/api/tunnels&#39;</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="ow">new</span> <span class="ne">Error</span><span class="p">(</span>
+      <span class="s1">&#39;Error connecting to ngrok to fetch public URL &#39;</span> <span class="o">+</span>
+      <span class="s1">&#39;(hint: did you run &quot;ngrok&quot;?). Original error: &#39;</span> <span class="o">+</span> <span class="nx">e</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">tun</span> <span class="k">of</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">tunnels</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">tun</span><span class="p">.</span><span class="nx">public_url</span>
+  <span class="p">}</span>
+
+  <span class="k">throw</span> <span class="ow">new</span> <span class="ne">Error</span><span class="p">(</span>
+    <span class="s1">&#39;Unexpected response from ngrok (tunnels found): &#39;</span> <span class="o">+</span>
+    <span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="security">Security</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We <em>strongly</em> recommend validating webhook signatures, otherwise it could be possible for an attacker to create fake payment confirmations.</p>
+</div>
+<p>To verify that webhooks are authentically from SpankPay, the content can be verified using the <code>X-SpankPay-Signature</code> header.</p>
+<p>Additionally, you include query parameters in the callback URL (for example, <code>…/quickstart/callback?customer-id=69420</code>), there is a very small risk that a man-in-the-middle attack between SpankPay's servers and your servers could alter these query parameters. For complete correctness, we recommend verifying the requested URL against the <code>receipt.url</code> field, which will be URL originally requested by SpankPay.</p>
+<h4 id="validating-webhook-signatures">Validating Webhook Signatures</h4>
+<div class="highlight"><pre><span></span><code>javascript tab=&quot;Javascript (manually)&quot;
+const crypto = require(&#39;crypto&#39;)
+
+const crypto = require(&#39;crypto&#39;)
+
+/**
+ * Decodes a SpankPay webhook, returning a triple of:
+ *   [data, timestamp, error]
+ *
+ * Where `data` is the webhook object, and `timestamp` is the
+ * call&#39;s timestamp (integer seconds since epoch, UTC).
+ *
+ * If an error is encountered (for example, because the
+ * signature is invalid), `error` will be a non-null
+ * string describing the error.
+ *
+ * For example:
+ *   const [data, timestamp, error] = decodeSpankPayWebhook(
+ *     process.env.SPANKPAY_API_SECRET,
+ *     req.headers[&#39;x-spankpay-signature&#39;],
+ *     req.body,
+ *   )
+ */
+function decodeSpankPayWebhook(secret, sig, data) {
+    if (!data || data.slice(0, 1) != &#39;{&#39;) {
+        const msg = (
+            `Empty or non-JSON webhook data: ` +
+            JSON.stringify(shorten(data))
+        )
+        return [null, null, msg]
+    }
+
+    const sigData = {}
+    sig.split(&#39;&amp;&#39;).forEach(bit =&gt; {
+        const [key, val] = bit.split(&#39;=&#39;)
+        sigData[key] = val
+    })
+
+    const timestamp = parseInt(sigData.t)
+    if (!isFinite(timestamp))
+        return [null, null, `Invalid or missing timestamp: ${sig}`]
+
+    const hash = crypto.createHmac(&#39;sha256&#39;, secret)
+    hash.update(`${timestamp}.${data}`)
+    const actualSig = hash.digest(&#39;hex&#39;)
+    if (sigData.s !== actualSig)
+        return [null, null, `Invalid signature. ${sigData.s} !== ${actualSig}`]
+
+    let dataObj
+    try {
+        dataObj = JSON.parse(data)
+    } catch (e) {
+        return [null, null, `Error decoding JSON: ${&#39;&#39; + e}`]
+    }
+
+    return [dataObj, timestamp, null]
+}
+
+function shorten(s, len) {
+    if (!len)
+        len = 16
+
+    if (!s || s.length &lt;= len)
+        return s
+
+    return s.slice(0, len / 2) + &#39;…&#39; + s.slice(s.length - len / 2)
+}
+
+function signSpankPayData(secret, data, t) {
+    if (t === undefined)
+      t = parseInt(Date.now() / 1000)
+    const hash = crypto.createHmac(&#39;sha256&#39;, secret)
+    hash.update(`${t}.${data}`)
+    return `t=${t}&amp;s=${hash.digest(&#39;hex&#39;)}`
+}
+
+if (typeof require !== &#39;undefined&#39; &amp;&amp; require.main == module) {
+  const secret = &#39;sk_spankpay&#39;
+  const data = &#39;{&quot;SpankPay&quot;: &quot;BOOTY&quot;}&#39;
+  const sig = signSpankPayData(secret, data, 696969)
+  console.log(`Signing &#39;${data}&#39; with secret key &#39;${secret}&#39;: ${sig}`)
+
+  examples = [
+    [&quot;correctly signed&quot;, sig, data],
+    [&quot;missing timestamp&quot;, &quot;&quot;, data],
+    [&quot;missing signature&quot;, &quot;t=696969&quot;, data],
+    [&quot;invalid signature&quot;, &quot;t=696969&amp;s=invalid&quot;, data],
+    [&quot;invalid data&quot;, sig, &#39;{&quot;invalid&quot;: true}&#39;],
+    [&quot;empty data&quot;, sig, null],
+    [&quot;non-JSON data&quot;, sig, &quot;invalid&quot;],
+  ]
+  for (const [name, sig, data] of examples) {
+    console.log(`Decoding ${name}:`, decodeSpankPayWebhook(secret, sig, data))
+  }
+}
+</code></pre></div>
+<p>``` python tab="Python (manually)"
+from <strong>future</strong> import print_function</p>
+<p>import sys
+PY3 = sys.version_info[0] == 3</p>
+<p>import hmac
+import time
+import json
+import hashlib</p>
+<p>if PY3:
+    from urllib.parse import parse_qsl
+else:
+    from urlparse import parse_qsl</p>
+<p>def decode_spankpay_webhook(secret, sig, data):
+    """ Decodes a SpankPay webhook, returning a triple of: <code>(data, timestamp,
+        error)</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">Where</span><span class="w"> </span><span class="n n-Quoted">`data`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">webhook</span><span class="w"> </span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`timestamp`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">call</span><span class="s1">&#39;s</span>
+<span class="s1">    timestamp (integer seconds since epoch, UTC).</span>
+
+<span class="s1">    If an error is encountered (for example, because the signature is</span>
+<span class="s1">    invalid), `error` will be a non-null string describing the error.</span>
+
+<span class="s1">    For example::</span>
+
+<span class="s1">        (data, timestamp, error) = decode_spankpay_webhook(</span>
+<span class="s1">            app.config.SPANKPAY_API_SECRET,</span>
+<span class="s1">            request.headers[&#39;</span><span class="n">x</span><span class="o">-</span><span class="n">spankpay</span><span class="o">-</span><span class="n">signature</span><span class="s1">&#39;],</span>
+<span class="s1">            request.data,</span>
+<span class="s1">        )</span>
+<span class="s1">&quot;&quot;&quot;</span>
+
+<span class="s1">secret = to_bytes(secret)</span>
+<span class="s1">data = data and to_bytes(data)</span>
+<span class="s1">if not data or data[:1] != b&quot;{&quot;:</span>
+<span class="s1">    return (None, None, &quot;Empty or non-JSON webhook data: %r&quot; %(shorten(data), ))</span>
+
+<span class="s1">sig_data = dict(parse_qsl(sig))</span>
+
+<span class="s1">try:</span>
+<span class="s1">    timestamp = int(sig_data.get(&quot;t&quot;))</span>
+<span class="s1">except (ValueError, TypeError):</span>
+<span class="s1">    return (None, None, &quot;Invalid or missing timestamp: %r&quot; %(sig, ))</span>
+
+<span class="s1">to_sign = b&quot;%d.%s&quot; %(timestamp, data)</span>
+<span class="s1">actual_sig = hmac.new(secret, to_sign, hashlib.sha256).hexdigest()</span>
+<span class="s1">if sig_data.get(&quot;s&quot;) != actual_sig:</span>
+<span class="s1">    return (None, None, &quot;Invalid signature. %r != %r&quot; %(sig_data.get(&quot;s&quot;), actual_sig))</span>
+
+<span class="s1">try:</span>
+<span class="s1">    data_obj = json.loads(data)</span>
+<span class="s1">except ValueError as e:</span>
+<span class="s1">    return (None, None, &quot;Error decoding JSON: %s&quot; %(e, ))</span>
+
+<span class="s1">return (data_obj, timestamp, None)</span>
+</code></pre></div>
+</td></tr></table>
+<p>def to_bytes(s):
+    # Note: use "ascii" instead of "utf-8" here because, in this context, we
+    # should only ever get ASCII input (ie, because JSON is ASCII, not unicode)
+    # and we should fail early if unicode sneaks in.
+    return (
+        s if isinstance(s, bytes) else
+        bytes(s, "ascii") if PY3 else
+        str(s)
+    )</p>
+<p>def shorten(s, n=16):
+    if not s or len(s) &lt; n:
+        return s
+    return s[:n//2] + b"..." + s[-n//2:]</p>
+<p>def sign_spankpay_data(secret, data, timestamp=None):
+    secret = to_bytes(secret)
+    data = to_bytes(data)
+    timestamp = int(timestamp if timestamp is not None else time.time())
+    data = b"%d.%s" %(timestamp, data)
+    sig = hmac.new(secret, data, hashlib.sha256).hexdigest()
+    return "t=%s&amp;s=%s" %(timestamp, sig)</p>
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    secret = 'sk_spankpay'
+    data = '{"SpankPay": "BOOTY"}'
+    sig = sign_spankpay_data(secret, data, 696969)
+    print("Signing %r with secret %r: %s" %(data, secret, sig))
+    examples = [
+        ("correctly signed", sig, data),
+        ("missing timestamp", "", data),
+        ("missing signature", "t=696969", data),
+        ("invalid signature", "t=696969&amp;s=invalid", data),
+        ("invalid data", sig, '{"invalid": true}'),
+        ("empty data", sig, None),
+        ("non-JSON data", sig, "invalid"),
+    ]
+    for (name, s, d) in examples:
+        print("Decoding %s: %s" %(name, decode_spankpay_webhook(secret, s, d), ))
+<div class="highlight"><pre><span></span><code>``` php tab=&quot;PHP (manually)&quot;
+&lt;?php
+
+declare(strict_types=1);
+
+/**
+ * Decodes a SpankPay webhook, returning: `[$data, $timestamp,
+ * $error]`
+ *
+ * Where `$data` is the webhook object (as an associative array), and
+ * `$timestamp` is the call&#39;s timestamp (integer seconds since epoch, UTC).
+ *
+ * If an error is encountered (for example, because the signature is
+ * invalid), `$error` will be a non-null string describing the error.
+ *
+ * For example:
+ *
+ *     define(&#39;SPANKPAY_API_SECRET&#39;, &quot;sk_...&quot;);
+ *
+ *     list($data, $timestamp, $error) = spankpay_decode_webhook(
+ *         SPANKPAY_API_SECRET,
+ *         $_SERVER[&#39;HTTP_X_SPANKPAY_SIGNATURE&#39;],
+ *         file_get_contents(&quot;php://input&quot;)
+ *     );
+ */
+function spankpay_decode_webhook(string $secret, string $sig, string $data) {
+    $repr = function ($val) {
+        return var_export($val, true);
+    };
+
+    if (!$data || substr($data, 0, 1) !== &#39;{&#39;) {
+        $msg = &quot;Empty or non-JSON webhook data: {$repr($data ?? spankpay_shorten($data))}&quot;;
+        return [null, null, $msg];
+    }
+
+    parse_str($sig, $sig_data);
+
+    $timestamp = $sig_data[&#39;t&#39;] ?? null;
+    if (!is_numeric($timestamp)) {
+        $msg = &quot;Invalid or missing timestamp: {$repr($timestamp)}&quot;;
+        return [null, null, $msg];
+    }
+
+    $expected_sig = $sig_data[&#39;s&#39;] ?? null;
+    $to_sign = &quot;$timestamp.$data&quot;;
+    $actual_sig = hash_hmac(&#39;sha256&#39;, $to_sign, $secret);
+    if (!hash_equals($expected_sig ?? &quot;&quot;, $actual_sig)) {
+        spankpay_debug(&quot;Secret key: {$repr(spankpay_shorten($secret))}; data: {$repr($to_sign)}&quot;);
+        $msg = &quot;Invalid signature. {$repr($expected_sig)} !== {$repr($actual_sig)}&quot;;
+        return [null, null, $msg];
+    }
+
+    $data_arr = json_decode($data, true);
+    if (!$data_arr) {
+        return [null, null, &quot;Error decoding JSON: {$repr($data)}&quot;];
+    }
+
+    return [$data_arr, (int) $timestamp, null];
+}
+
+function spankpay_debug(string $msg) {
+    if (defined(&#39;SPANKPAY_DEBUG&#39;) &amp;&amp; SPANKPAY_DEBUG) {
+        echo &quot;SPANKPAY_DEBUG: $msg\n&quot;;
+    }
+}
+
+function spankpay_shorten(string $str, integer $len = null) {
+    $len = $len ?? 16;
+
+    if (strlen($str) &lt;= $len) {
+        return $str;
+    }
+
+    return substr($str, 0, $len / 2) . &quot;...&quot; . substr($str, -$len / 2);
+}
+
+function spankpay_sign_data($secret, $data, $t = null) {
+    $t = $t ?? time();
+    $s = hash_hmac(&#39;sha256&#39;, &quot;$t.$data&quot;, $secret);
+    return &quot;t=$t&amp;s=$s&quot;;
+}
+
+if (!count(debug_backtrace())) {
+    define(&#39;SPANKPAY_DEBUG&#39;, true);
+    $secret = &#39;sk_spankpay&#39;;
+    $data = &#39;{&quot;SpankPay&quot;: &quot;BOOTY&quot;}&#39;;
+    $sig = spankpay_sign_data($secret, $data, 696969);
+    echo &quot;Signing &#39;$data&#39; with secret key &#39;$secret&#39;: $sig\n&quot;;
+    $examples = [
+        [&quot;correctly signed&quot;, $sig, $data],
+        [&quot;missing timestamp&quot;, &quot;&quot;, $data],
+        [&quot;missing signature&quot;, &quot;t=696969&quot;, $data],
+        [&quot;invalid signature&quot;, &quot;t=696969&amp;s=invalid&quot;, $data],
+        [&quot;invalid data&quot;, $sig, &#39;{&quot;invalid&quot;: true}&#39;],
+        [&quot;non-JSON data&quot;, $sig, &#39;invalid&#39;]
+    ];
+    foreach ($examples as $example) {
+        $result = spankpay_decode_webhook($secret, $example[1], $example[2]);
+        echo &quot;Decoding ${example[0]}: &quot; . var_export($result, true) . &quot;\n&quot;;
+    }
+}
+</code></pre></div></p>
+<h4 id="preventing-replay-attacks">Preventing Replay Attacks</h4>
+<p>To ensure your application only processes each webhook once, we recommend using the signature as a nonce. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/spankpay/callback&#39;</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">sig</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;x-spankpay-signature&#39;</span><span class="p">]</span>
+    <span class="c1">// ... validate signature ...</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">firstUse</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="sb">`spankpay-webhook:</span><span class="si">${</span><span class="nx">sig</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="c1">// The nx - Not Exists - flag ensures the key can only be set once</span>
+            <span class="nx">nx</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="c1">// The ex - EXpire - flag ensures the key will expire after an hour</span>
+            <span class="nx">ex</span><span class="o">:</span> <span class="mf">60</span> <span class="o">*</span> <span class="mf">60</span><span class="p">,</span>
+        <span class="p">})</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">firstUse</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="nx">received</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+
+        <span class="c1">// ... handle webhook ...</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// If there is an error, clear the flag so that the webhook</span>
+        <span class="c1">// will be processed on a subsequent request.</span>
+        <span class="c1">// NOTE: your application must be careful not to leave the</span>
+        <span class="c1">//       webhook in a partially processed state, otherwise</span>
+        <span class="c1">//       there may be inconsistencies when it is retried.</span>
+        <span class="k">await</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">del</span><span class="p">(</span><span class="sb">`spankpay-webhook:</span><span class="si">${</span><span class="nx">sig</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+        <span class="k">throw</span> <span class="nx">e</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="nx">received</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../v2-index/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,815 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Get paid with crypto!">
+      
+      
+      
+      <link rel="icon" href="images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>Home v1 - SpankPay Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#e92063">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="pink" data-md-color-accent="purple">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-the-spankpay-developer-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="SpankPay Developer Documentation" class="md-header__button md-logo" aria-label="SpankPay Developer Documentation" data-md-component="logo">
+      
+  <img src="images/white-S-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SpankPay Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home v1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/spankchain/docs.spankpay.com" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    spankchain/docs.spankpay.com
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="SpankPay Developer Documentation" class="md-nav__button md-logo" aria-label="SpankPay Developer Documentation" data-md-component="logo">
+      
+  <img src="images/white-S-logo.png" alt="logo">
+
+    </a>
+    SpankPay Developer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/spankchain/docs.spankpay.com" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    spankchain/docs.spankpay.com
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          v1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="v1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          v1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home v1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Home v1
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-include-the-spankpay-javascript" class="md-nav__link">
+    1. Include the SpankPay JavaScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-a-pay-with-spankpay-button" class="md-nav__link">
+    2. Add a Pay with SpankPay button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-generate-an-api-key-and-write-a-webhook-endpoint" class="md-nav__link">
+    3. Generate an API key and write a Webhook endpoint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrating-spankpay" class="md-nav__link">
+    Integrating SpankPay
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrating SpankPay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-include-the-spankpay-javascript_1" class="md-nav__link">
+    1. Include the SpankPay JavaScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-an-invoice" class="md-nav__link">
+    2. Create an Invoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-implement-a-webhook-callback-url" class="md-nav__link">
+    3. Implement a Webhook Callback URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-testing-your-integration" class="md-nav__link">
+    4. Testing Your Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Testing Your Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-api-keys" class="md-nav__link">
+    Testing API Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-webhooks" class="md-nav__link">
+    Testing Webhooks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api-reference/" class="md-nav__link">
+        API Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          v2 (WIP)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="v2 (WIP)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          v2 (WIP)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="v2-index/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="v2-api-reference/" class="md-nav__link">
+        API Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-include-the-spankpay-javascript" class="md-nav__link">
+    1. Include the SpankPay JavaScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-a-pay-with-spankpay-button" class="md-nav__link">
+    2. Add a Pay with SpankPay button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-generate-an-api-key-and-write-a-webhook-endpoint" class="md-nav__link">
+    3. Generate an API key and write a Webhook endpoint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrating-spankpay" class="md-nav__link">
+    Integrating SpankPay
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrating SpankPay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-include-the-spankpay-javascript_1" class="md-nav__link">
+    1. Include the SpankPay JavaScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-an-invoice" class="md-nav__link">
+    2. Create an Invoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-implement-a-webhook-callback-url" class="md-nav__link">
+    3. Implement a Webhook Callback URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-testing-your-integration" class="md-nav__link">
+    4. Testing Your Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Testing Your Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-api-keys" class="md-nav__link">
+    Testing API Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-webhooks" class="md-nav__link">
+    Testing Webhooks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/spankchain/docs.spankpay.com/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="welcome-to-the-spankpay-developer-documentation">Welcome to the SpankPay Developer Documentation!</h1>
+<h2 id="overview">Overview</h2>
+<p>The SpankPay Merchant SDK makes it easy to get paid with cryptocurrency: easy for your users, and easy for you (the developer).</p>
+<p>Getting started with SpankPay is a three-step process:</p>
+<h4 id="1-include-the-spankpay-javascript">1. Include the SpankPay JavaScript</h4>
+<p>Add the following line to the bottom of the page on which you will be accepting payments:</p>
+<div class="highlight"><pre><span></span><code>&lt;script src=&quot;https://pay.spankchain.com/spankpay.js&quot;&gt;&lt;/script&gt;
+</code></pre></div>
+<h4 id="2-add-a-pay-with-spankpay-button"><strong>2. Add a</strong> <em><strong>Pay with SpankPay</strong></em> <strong>button</strong></h4>
+<p>Add the following code to create a button which will start a SpankPay payment. Alternatively, you can call the JavaScript API directly.</p>
+<div class="highlight"><pre><span></span><code>html tab=&quot;HTML&quot; 
+&lt;button
+    data-spankpay-key=&quot;test_quickstart_key&quot;
+    data-amount=&quot;69.69&quot;
+    data-currency=&quot;USD&quot;
+    data-callback-url=&quot;https://pay-api.spankchain.com/quickstart/callback&quot;
+    data-on-payment=&quot;onSpankPayPayment&quot;
+    data-description=&quot;Test Invoice HTML&quot;&gt;
+  Pay with SpankPay!
+&lt;/button&gt;
+
+&lt;script&gt;
+function onSpankPayPayment(payment) {
+    console.log(`Payment ${payment.status}:`, payment)
+}
+&lt;/script&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>javascript tab=&quot;Javascript API&quot;
+const { spankpay } = require(&#39;spankpay&#39;)
+
+spankpay.show({
+    apiKey: &#39;test_quickstart_key&#39;,
+    amount: &#39;69.69&#39;,
+    currency: &#39;USD&#39;,
+    callbackUrl: &#39;https://pay-api.spankchain.com/quickstart/callback&#39;,
+    description: &#39;Test Invoice JS API&#39;,
+    onPayment: function(payment) {
+        console.log(`Payment ${payment.status}`, payment)
+    },
+})
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>We strongly advise our merchants to allow "partial payments" on invoices by passing in the SDK option <code>allowPartial: true</code>. This means that any money paid on an invoice will be passed into your SpankPay account and a webhook will be sent - if you have multiple payment tiers, you will need to account for that in the endpoint that receives webhooks from SpankPay by checking the <code>amount_received</code> on the invoice at the time of webhook receipt.</p>
+</div>
+<p>For example, if you have multiple payment tiers like the following:
+$0 - $10: 1 token per dollar
+$10 - $100: 1.1 tokens per dollar
+$100+: 1.2 tokens per dollar
+A user might initiate an invoice for $500 but only send $5, you would need to implement appropriate logic for handling that on your end by checking the actual
+amount of money the user sent instead of relying on the total amount invoiced.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>Want more control?</strong> SpankPay comes with a <a href="api-reference/">complete JavaScript API</a> to give you full control of the payment process.</p>
+</div>
+<h4 id="3-generate-an-api-key-and-write-a-webhook-endpoint">3. Generate an API key and write a Webhook endpoint</h4>
+<p>After you've evaluated SpankPay and would like to fully integrate it with your site, you will need to sign up for an account, create testing + production API keys, and implement a webhook endpoint which SpankPay will use to notify your application on a successful payment.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This is covered in detail in <a href="api-reference/#webhook-callbacks">Webhook Callbacks</a>.</p>
+</div>
+<h2 id="integrating-spankpay">Integrating SpankPay</h2>
+<h3 id="1-include-the-spankpay-javascript_1">1. Include the SpankPay JavaScript</h3>
+<p>The first step in integrating SpankPay into your website is including the SpankPay JavaScript. This can be done directly with a <code>&lt;script&gt;</code> tag:</p>
+<div class="highlight"><pre><span></span><code>&lt;script src=&quot;https://pay.spankchain.com/spankpay.js&quot;&gt;&lt;/script&gt;
+</code></pre></div>
+<p>Or via <code>npm</code>:</p>
+<div class="highlight"><pre><span></span><code>$ npm install --save spankpay
+</code></pre></div>
+<p>See <a href="api-reference/">SpankPay APIs</a> for complete API documentation for the <code>spankpay.js</code> library.</p>
+<h3 id="2-create-an-invoice">2. Create an Invoice</h3>
+<p>In SpankPay, an <code>Invoice</code> is used to request payment from a user. Invoices can be created through either a <a href="api-reference/#creating-a-purchase-with-a-button">SpankPay Button</a>.</p>
+<div class="highlight"><pre><span></span><code>&lt;button
+    data-spankpay-key=&quot;test_quickstart_key&quot;
+    data-amount=&quot;69.69&quot;
+    data-currency=&quot;USD&quot;
+    data-callback-url=&quot;https://pay-api.spankchain.com/quickstart/callback&quot;
+    data-on-payment=&quot;onSpankPayPayment&quot;&gt;
+  Pay with SpankPay!
+&lt;/button&gt;
+</code></pre></div>
+<p>Which will show the SpankPay payment page when the <em>Pay with SpankPay!</em> button is clicked, and call the <code>onSpankPayPayment</code> callback once the payment has been completed and the webhook callback has been called.</p>
+<p>Or via the <a href="api-reference/#creating-an-invoice-with-the-spankpay-javascript-api"><code>spankpay.show(...)</code> method</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">spankpay</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;spankpay&#39;</span><span class="p">)</span>
+
+<span class="nx">spankpay</span><span class="p">.</span><span class="nx">show</span><span class="p">({</span>
+    <span class="nx">apiKey</span><span class="o">:</span> <span class="s1">&#39;test_quickstart_key&#39;</span><span class="p">,</span>
+    <span class="nx">amount</span><span class="o">:</span> <span class="s1">&#39;69.69&#39;</span><span class="p">,</span>
+    <span class="nx">currency</span><span class="o">:</span> <span class="s1">&#39;USD&#39;</span><span class="p">,</span>
+    <span class="nx">callbackUrl</span><span class="o">:</span> <span class="s1">&#39;https://pay-api.spankchain.com/quickstart/callback&#39;</span><span class="p">,</span>
+    <span class="nx">onPayment</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">payment</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Payment </span><span class="si">${</span><span class="nx">payment</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="nx">payment</span><span class="p">)</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>And For a complete description of each of these methods, including their options, see the <a href="api-reference/#invoice">Invoice API</a>.</p>
+<h3 id="3-implement-a-webhook-callback-url">3. Implement a Webhook Callback URL</h3>
+<p>When SpankPay receives confirmation of a user's payment, it will call the <a href="api-reference/#webhook-callbacks"><code>callback</code> webhook</a> URL with a <code>Payment</code> to notify your application that the payment was completed successfully.</p>
+<div class="highlight"><pre><span></span><code><span class="err">POST</span><span class="w"> </span><span class="err">/quicks</span><span class="kc">tart</span><span class="err">/callback</span><span class="w"></span>
+<span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">/plai</span><span class="kc">n</span><span class="w"></span>
+<span class="err">X</span><span class="mi">-</span><span class="err">Spa</span><span class="kc">n</span><span class="err">kPay</span><span class="mi">-</span><span class="err">Key</span><span class="p">:</span><span class="w"> </span><span class="kc">test</span><span class="err">_quicks</span><span class="kc">tart</span><span class="err">_key</span><span class="w"></span>
+<span class="err">X</span><span class="mi">-</span><span class="err">Spa</span><span class="kc">n</span><span class="err">kPay</span><span class="mi">-</span><span class="err">Sig</span><span class="kc">nature</span><span class="p">:</span><span class="w"> </span><span class="kc">t</span><span class="err">=</span><span class="mi">1551389518</span><span class="err">&amp;s=b</span><span class="mi">613679</span><span class="err">a</span><span class="mi">0814</span><span class="err">d</span><span class="mf">9e</span><span class="err">c…</span><span class="w"></span>
+
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;payment&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;paymentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pay_c493715653c&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;createdOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1969-06-09T06:09:06.969Z&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;invoiceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;inv_f95d778c35f&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;invoice&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;69.69&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;amountCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;inputAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.6969&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;inputCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ETH&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;inputTx&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x2144292c5ad…&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;receipt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;webhook&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://yoursite.com/yourserver/callback&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;called&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;calledOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1969-06-09T06:09:06.969Z&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;responseStatusCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="err">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>For more, see:</p>
+<ul>
+<li><a href="api-reference/#webhook-callbacks">Implementing Webhooks</a></li>
+<li><a href="api-reference/#payment">The Payment object</a></li>
+</ul>
+<h3 id="4-testing-your-integration"><strong>4. Testing Your Integration</strong></h3>
+<h4 id="testing-api-keys"><strong>Testing API Keys</strong></h4>
+<p>Every API key has a corresponding "testing" key. This testing key shares common settings (such as accepted coins) with the main key, but the currency list in the payment iframe will also include the option to pay with "test" versions of each coin.</p>
+<p>When a test coin is selected, the user will be presented with a "send fake payment" button, which will immediately simulate a payment with that coin.</p>
+<p>Test payments are identical to real payments, except the currencies will be prefixed with "TEST":</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;69.69&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;amountCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TEST-USD&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;inputAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.6969&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;inputCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TEST-ETH&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="err">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Note that the testing API key also uses a different secret key.</p>
+<p>We recommend using the testing key in your development and staging environments.</p>
+<h4 id="testing-webhooks">Testing Webhooks</h4>
+<p>For more details on effectively testing webhooks during development, see: <a href="api-reference/#testing-webhooks">Testing Webhooks</a>.</p>
+<h4 id="_1"></h4>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="api-reference/" class="md-footer__link md-footer__link--next" aria-label="Next: API Reference" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              API Reference
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>
