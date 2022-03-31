@@ -60,8 +60,6 @@ An Invoice is a request for a payment. When created with the Button API or the J
         <p>A list of currencies which should be accepted for this invoice. For valid
           values, see <a href="#input-currency">Input Currencies</a>.</p>
         <p></p>
-        <p>Must be a subset of the API Key&apos;s list of accepted currencies.</p>
-        <p></p>
         <p>Optional (default: all available currencies)</p>
       </td>
     </tr>
