@@ -34,5 +34,3 @@ Follow these steps:
 > _This wiki is heavily inspired by the [Aragon Wiki](https://github.com/aragon/aragon-wiki/). Huge thanks for all of their pioneering work!_
 
 ## Deploying Updates
-
-Updates are automatically deployed by YourBase on each push to `master`.
